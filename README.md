@@ -1,30 +1,25 @@
 # Overview
 
-{Important!  Do not say in this section that this is college assignment.  Talk about what you are trying to accomplish as a software engineer to further your learning.}
+This is a speech booster app. It was designed with the intention of recording whispers and playing them back loud enough to be heard easily. It was an effective introduction to iOS fundamentals, especially regarding realtime audio processing using AVAudioEngine.
 
-{Provide a description of your app.  Describe how to use the app.}
-
-{Describe your purpose for creating this app.}
-
-{Provide a link to your YouTube demonstration.  It should be a 4-5 minute demo of the app running and a walkthrough of the code.}
+I made this as a proof of concept with the intention of helping someone who is having difficulty speaking for medical reasons. I ran to a few difficulties with the exact implementation details I had originally envisoned. Some of those sticking points are detailed under the future work section. The greatest success of this project was learning the basics of AVAudioEngine, which can be poorly documented in spots. Some of what was learned can be found in the software demo linked below.
 
 [Software Demo Video](http://youtube.link.goes.here)
 
 # Development Environment
 
-{Describe the tools that you used to develop the app}
+I used XCode 13 to program this app and an iPhone 11 to test it.
 
-{Describe the programming language that you used and any libraries.}
+I used UIKit, AVFoundation, and AVAudioEngineto build the app. UIKit was used to handle updating the user-interface. AVFoundation was used to handle the audio session and a subset of AVFoundation, AVAudioEngine, was used and explored extensively in the process of getting a functional demo.
 
 # Useful Websites
 
-{Make a list of websites that you found helpful in this project}
-* [Web Site Name](http://url.link.goes.here)
-* [Web Site Name](http://url.link.goes.here)
+* [How I learned my orignal vision wasn't possible.](https://stackoverflow.com/questions/41487905/avaudiosession-microphone-headphone-as-input-and-iphone-speaker-as-output)
+* [WWDC Talk Explaining AVAudioEngine](https://www.youtube.com/watch?v=FlMaxen2eyw)
+* [AVAudioEngine Simply](https://www.youtube.com/watch?v=g57pGi_uHeY)
 
 # Future Work
 
-{Make a list of things that you need to fix, improve, and add in the future.}
-* Item 1
-* Item 2
-* Item 3
+* Adjust the way the AVAudioFile saving is handled for a better user experience.
+* Investigate another library (perhaps CoreAudio) to get input from headphones and output through the iPhone speaker, as originally intended. 
+* Flesh out the UI to produce a more visually/feature rich user experience. 
