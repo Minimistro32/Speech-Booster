@@ -4,7 +4,7 @@ This is a speech booster app. It was designed with the intention of recording wh
 
 I made this as a proof of concept with the intention of helping someone who is having difficulty speaking for medical reasons. I ran to a few difficulties with the exact implementation details I had originally envisoned. Some of those sticking points are detailed under the future work section. The greatest success of this project was learning the basics of AVAudioEngine, which can be poorly documented in spots. Some of what was learned can be found in the software demo linked below.
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://youtu.be/AoF9Z9ktm4w)
 
 # Development Environment
 
