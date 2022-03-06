@@ -23,10 +23,12 @@ class ViewController: UIViewController {
     var player = AVAudioPlayerNode()
     var eqEffect = AVAudioUnitEQ()
     
+    //execution starts here
     override func viewDidLoad() {
         super.viewDidLoad()
         
         do {
+            //set session variables to prevent inteference with currently playing audio
             try session.setCategory(.playAndRecord, options: .mixWithOthers)
             try session.setActive(true)
         } catch {
@@ -34,6 +36,7 @@ class ViewController: UIViewController {
         }
     }
     
+    //These two functions configure the audio engine for different functions.
     func configureRecording() {
         try! file = AVAudioFile(forWriting: URLFor("my_file.caf")!, settings: engine.mainMixerNode.inputFormat(forBus: 0).settings)
         engine.connect(engine.inputNode, to: engine.mainMixerNode, format: engine.inputNode.outputFormat(forBus: 0))
@@ -47,6 +50,7 @@ class ViewController: UIViewController {
         engine.connect(eqEffect, to: engine.outputNode, format: file?.processingFormat)
     }
     
+    //This function will stop (if needed), configure, and start the audio engine
     func startEngine(recording: Bool? = nil) {
         if self.engine.isRunning {
             self.engine.stop()
@@ -67,6 +71,7 @@ class ViewController: UIViewController {
         }
     }
     
+    //This is if the button is pressed
     @IBAction func boostPressed(_ sender: Any) {
         if recordingExists {
             if let file = file {
@@ -97,6 +102,8 @@ class ViewController: UIViewController {
         }
     }
     
+    
+    //This wrapper generates a URL from the FileManager
     func URLFor(_ filename: String) -> URL? {
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         return documentsDirectory.appendingPathComponent(filename)
